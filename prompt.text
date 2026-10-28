@@ -1,0 +1,74 @@
+
+DATASET:
+Dataset link: [ENTER THE DATASET NAME ] OR [UPLOAD IT ]
+
+MODEL NAME:
+enter the model name here [ MODEL NAME]
+
+TEST NAME:
+enter the test name  [TEST NAME]
+
+MODEL TYPE:
+[CLASSIFICATION OR REGRESSOR]
+
+
+For the assigned CLASSIFICATION/REGRESSOR algorithm, students must implement:
+• Model–1: regressor/classification without PCA;
+• Model–2: the same regressor/classification with PCA.
+
+[REGRESSOR]
+Use the same 5-Fold Cross-Validation splits for both models so that the fold-wise validation errors .
+
+[CLASSIFICATION]
+Use the same StratifedKFold Cross-Validation splits for both models so that the fold-wise validation errors .
+
+
+
+Tasks:
+
+(a) Analyze the dataset characteristics by examining data types, missing values, descriptive statistics, skewness, target distribution, predictor distributions, correlations, and outliers.
+    Identify the non-predictive identifier and apply appropriate preprocessing including imputation, categorical encoding, and justified outlier treatment.
+
+
+(b) Apply [MODEL NAME] with RBF kernel to the preprocessed feature representation without PCA. Use a single RBF-kernel SVR formulation for this experiment. 
+    Select suitable hyperparameters using a leakage-free tuning strategy. Tune parameter using an appropriate grid or randomized search.
+    Report the final parameter configuration and baseline regression model. [15 Marks]
+
+
+(c) Analyze correlation and redundancy among numerical predictors and apply Principal Component Analysis after appropriate scaling.
+    Determine the minimum number of components required to retain at least 95% cumulative explained variance. 
+    Present the explained variance and the original versus reduced dimensions. Then apply the same [MODEL NAME] 
+    to the PCA-transformed data using the same modelling protocol used in part (b).
+
+(d) Evaluate Model–1 and Model–2 using the same 5-fold or StratifedKFold Cross-Validation splits.
+    Record the validation RMSE for each fold:
+
+| Fold | RMSE Without PCA | RMSE With PCA | RMSE Difference |
+| :---: | :---: | :---: | :---: |
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+| 4 | | | |
+| 5 | | | |
+
+    [FOR REGRESSION]
+    report mean and standard deviation of RMSE together with MAE, R², and MAPE.
+
+    [FOR CLASSIFICATION]
+    report the accuracy,f1,pricision,recall,confusion matrics 
+    Also examine whether PCA changes the gap between training and validation errors.
+
+    Compare the two representations and justify which gives better predictive generalization. 
+
+[TEST NAME]
+(e) Using the five paired fold-wise RMSE values from part (d), 
+    evaluate statistical significance between the with-PCA and without-PCA models using a two-sided paired t-test.
+    Define:
+    H0 : µd = 0  and  H1 : µd ≠ 0,
+    where d is the paired fold-wise RMSE difference. Compute the t-statistic and p-value and interpret the result at α = 0.05. State whether the null hypothesis is rejected or not rejected. [10 Marks]
+
+(f) Design a final leakage-free regression workflow and propose whether the with-PCA or without-PCA representation should be adopted. Prepare a structured comparison covering preprocessing,
+    dimensionality, cross-validation consistency, RMSE/MAE/R², statistical-test conclusion, overfitting/generalization, computational cost, interpretability, and reproducibility.
+    Evaluate the limitations of the final solution and propose at least two meaningful improvements. Summarize the major learning outcomes obtained from the experiment. 
+
+
